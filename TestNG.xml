@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite">
+	<listeners>
+    	<listener class-name="Utilities.ExtentListeners" />
+	</listeners>
+	<test name="MyTest">
+		<classes>
+			<class name="TestCases.Test_Login">
+				<methods>
+					<include name="testSuccessfulLoginandLogout" />
+					
+					<include name="testInvalidLogin" />
+					
+					<include name="testRequiredFieldValidation" />
+					
+					<exclude name="testForgotPassReqFieldValidation" />
+				</methods>
+			</class>
+			<class name="TestCases.Test_AdminFunctionality">
+				<methods>
+					<exclude name="testCreateUser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
